@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #105e61;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+img {
+    max-width: 20%; /* Evita que la imagen sea más grande que la pantalla */
+    height: auto;    /* Mantiene las proporciones originales para que no se deforme */
+    border-radius: 50px; /* Le da unos bordes redondeados y modernos */
+    margin-top: 20px; /* Agrega un poco de espacio en la parte superior */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Opcional: le da una sombra sutil */
+}
+/* Quitamos los puntos de la lista y le damos un color de fondo al menú */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #2c3e50; /* Un azul oscuro elegante */
+    overflow: hidden;
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Colocamos los elementos uno al lado del otro */
+nav li {
+    float: left;
+}
+
+/* Le damos estilo a los enlaces (los botones del menú) */
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none; /* Quita el subrayado azul feo por defecto */
+    font-weight: bold;
+}
+
+/* Efecto visual al pasar el cursor por encima (Hover) */
+nav li a:hover {
+    background-color: #1a252f; /* Un tono ligeramente más oscuro */
+}
+/* Estilos para la caja principal que envuelve todo */
+.contenedor-columnas {
+    display: flex; /* ¡Esta es la magia! Convierte el contenedor en una fila */
+    align-items: center; /* Centra ambos elementos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio entre las columnas */
+    gap: 40px; /* Crea un espacio de 40 píxeles entre el texto y la imagen */
+    max-width: 1000px; /* Evita que las columnas se estiren demasiado en monitores grandes */
+    margin: 40px auto; /* Centra todo el bloque en el medio de la página */
+    padding: 20px;
+}
+
+/* Le decimos a ambas columnas que ocupen el mismo espacio (50% cada una) */
+.columna-texto, .columna-imagen {
+    flex: 1; 
+}
+
+/* Alineamos el texto de la izquierda para que sea más fácil de leer */
+.columna-texto {
+    text-align: left;
+}
+/* --- Estilos para el Footer --- */
+footer {
+    background-color: #2c3e50; /* Usamos el mismo azul oscuro del navbar para mantener consistencia */
+    color: white; /* Texto en blanco para que resalte */
+    text-align: center; /* Centramos todo el contenido */
+    padding: 30px 20px;
+    margin-top: 50px; /* Da un buen espacio de respiro entre el contenido principal y el final */
+    border-top-left-radius: 8px; /* Opcional: redondea un poco las esquinas superiores */
+    border-top-right-radius: 8px;
+}
+
+/* Quitamos los márgenes por defecto del texto del footer */
+footer p {
+    margin: 0 0 15px 0; 
+}
+
+/* Estilos para los enlaces de redes sociales */
+.redes-sociales a {
+    color: #3498db; /* Un azul más claro para los enlaces */
+    text-decoration: none; /* Quitamos el subrayado */
+    margin: 0 10px; /* Separamos un poco las palabras */
+    font-weight: bold;
+}
+
+/* Efecto visual al pasar el cursor (Hover) */
+.redes-sociales a:hover {
+    color: white;
+}
+/* --- Estilos para el Slider --- */
+.seccion-slider {
+    max-width: 1000px;
+    margin: 60px auto; /* Centra la sección y le da espacio arriba y abajo */
+    padding: 0 20px;
+}
+
+.slider-contenedor {
+    display: flex; /* Pone las imágenes en una fila horizontal */
+    gap: 20px; /* Espacio entre cada imagen */
+    overflow-x: auto; /* Permite deslizar horizontalmente si hay muchas imágenes */
+    scroll-snap-type: x mandatory; /* Crea el efecto de "imán" al deslizar */
+    padding-bottom: 20px; /* Espacio para no tapar la barra de desplazamiento */
+}
+
+/* Estilos individuales para cada imagen del slider */
+.slider-contenedor img {
+    width: 300px; /* Tamaño fijo para que quepan varias en la pantalla */
+    height: 250px;
+    object-fit: cover; /* Evita que la imagen se deforme o estire */
+    border-radius: 12px;
+    scroll-snap-align: center; /* Le dice al imán que centre la imagen al detenerse */
+    flex-shrink: 0; /* Evita que las imágenes se aplasten para intentar caber todas juntas */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Opcional: Personalizar la barra de desplazamiento para que se vea moderna */
+.slider-contenedor::-webkit-scrollbar {
+    height: 10px;
+}
+.slider-contenedor::-webkit-scrollbar-thumb {
+    background-color: #3498db;
+    border-radius: 10px;
+}
+.slider-contenedor::-webkit-scrollbar-track {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+/* --- Diseño Responsivo (Celulares y Tablets) --- */
+
+/* Esta regla se activará SOLO en pantallas de 768px de ancho o menos */
+@media (max-width: 768px) {
+    
+    /* 1. Apilamos las columnas principales */
+    .contenedor-columnas {
+        flex-direction: column; /* Cambia la alineación de horizontal a vertical */
+        text-align: center; 
+        gap: 20px; /* Reducimos un poco el espacio entre el texto y la imagen */
+    }
+
+    .columna-texto {
+        text-align: center; /* Aseguramos que el texto esté centrado en móviles */
+    }
+
+    /* 2. Ajustamos la imagen principal para que no sea inmensa */
+    .columna-imagen img {
+        width: 80%; 
+        margin: 0 auto;
+    }
+
+    /* 3. Apilamos los enlaces del menú de navegación */
+    nav li {
+        float: none; /* Quitamos la alineación horizontal de los botones */
+    }
+    
+    nav li a {
+        padding: 12px; /* Ajustamos el espacio interno de los botones */
+        border-bottom: 1px solid #1a252f; /* Agregamos una sutil línea separadora */
+    }
+}
